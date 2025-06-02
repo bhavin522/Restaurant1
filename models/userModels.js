@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema(
 );
 
 // Index for better query performance
-userSchema.index({ email: 1 });
+
 
 // Pre-save middleware to update the updatedAt field
 userSchema.pre("save", function (next) {
