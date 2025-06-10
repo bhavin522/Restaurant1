@@ -6,10 +6,22 @@ require("dotenv").config();
 const app = express();
 
 // CORS configuration to allow frontend on port 3000
+// app.use(
+//   cors({
+//     origin: true,
+//     credentials: true,
+//   })
+// );
+
 app.use(
   cors({
-    origin: true,
+    origin: [
+      "http://localhost:3000",
+      "https://project1-sand-seven.vercel.app" // Add your real Vercel URL here
+    ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "Accept"]
   })
 );
 
